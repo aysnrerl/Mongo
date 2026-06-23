@@ -194,13 +194,13 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/Product/CreateProduct` — Yeni ürün ekleme formu. Kategori seçimi `ViewBag.Categories` ile dropdown'dan yapılır; ürün adı, fiyat, eski fiyat, hazırlanma süresi ve görsel URL girilir.
 
 `/Product/UpdateProduct/{id}` — Seçilen ürünün mevcut bilgileri forma doldurulur, güncelleme yapılır.
----
+
 <img width="1509" height="836" alt="Image" src="https://github.com/user-attachments/assets/5487227f-8846-43c5-a538-e8aa266d56c8" />
----
+
 <img width="1489" height="870" alt="Image" src="https://github.com/user-attachments/assets/aaee9934-2bd4-412c-834c-97ce40942bf0" />
----
+
 <img width="448" height="874" alt="Image" src="https://github.com/user-attachments/assets/88a37282-5c24-4071-80e1-d5a2fbe95f1a" />
----
+
 ---
 
 ### 🗂️ Kategori Yönetimi
@@ -208,13 +208,13 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/Category/CategoryList` — Tüm kategoriler tablo halinde listelenir. Her kategoride ad, açıklama ve ikon URL'i gösterilir.
 
 `/Category/CreateCategory` & `/Category/UpdateCategory/{id}` — Yeni kategori ekleme ve güncelleme formları.
----
+
 <img width="1501" height="799" alt="Image" src="https://github.com/user-attachments/assets/cb1d484d-0cbc-453e-9ea7-dbca97cb57a3" />
----
+
 <img width="1483" height="534" alt="Image" src="https://github.com/user-attachments/assets/c41e6b0e-9a7f-4b6f-a012-58fdda9e22f0" />
----
+
 <img width="1496" height="541" alt="Image" src="https://github.com/user-attachments/assets/ec2689d6-9282-417f-996a-7a0561c2e8ab" />
----
+
 ---
 
 ### 📦 Sipariş Yönetimi
@@ -224,27 +224,27 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/Order/UpdateOrder/{id}` — Sipariş durumu ve bilgileri güncellenir.
 
 `/Order/CreateOrder` — Admin tarafından manuel sipariş oluşturulabilir.
----
+
 <img width="1524" height="524" alt="Image" src="https://github.com/user-attachments/assets/223425d3-c213-41bc-b365-5731c4fb522d" />
----
+
 <img width="1532" height="770" alt="Image" src="https://github.com/user-attachments/assets/b297ea9b-1821-4824-a403-7320bc42634e" />
----
+
 <img width="1501" height="749" alt="Image" src="https://github.com/user-attachments/assets/68a6100e-ff01-4832-94db-a95d7dcd6b10" />
----
+
 ---
 
 ### ℹ️ Hakkımızda Bölüm 1 & 2 Yönetimi
 
 `/AboutSection1/AboutSection1List` ve `/AboutSection2/AboutSection2List` — Önyüzde gösterilen hakkımızda içeriklerinin (başlık, açıklama, görsel URL) yönetildiği listeleme sayfaları. Her iki bölüm için ayrı oluşturma ve güncelleme formları bulunur.
----
+
 <img width="1533" height="367" alt="Image" src="https://github.com/user-attachments/assets/dc87add2-89c3-44c1-bf00-1ba3f8b8d8d9" />
----
+
 <img width="1517" height="671" alt="Image" src="https://github.com/user-attachments/assets/b432b9e7-15ac-4620-afa4-1502f44904d2" />
----
+
 <img width="1531" height="365" alt="Image" src="https://github.com/user-attachments/assets/925034de-c009-4ef4-9bd2-e37f7869fb54" />
----
+
 <img width="1524" height="676" alt="Image" src="https://github.com/user-attachments/assets/8bfb6921-18cf-4646-b45f-cd2c463f1eae" />
----
+
 ---
 
 ### ⭐ Öne Çıkanlar (Feature) Yönetimi
@@ -252,11 +252,11 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/Feature/FeatureList` — Önyüzdeki hero alanında gösterilen özellikler listelenir ve yönetilir. Başlık, alt başlık ve ikon bilgisi içerir.
 
 <img width="1530" height="455" alt="Image" src="https://github.com/user-attachments/assets/05e4b0c0-9d9e-432b-b8b1-c90f4d8d44a2" />
----
+
 <img width="1524" height="641" alt="Image" src="https://github.com/user-attachments/assets/6f7b6d5b-0ad0-4e9d-8c62-de2ac98b73fb" />
----
+
 <img width="1528" height="642" alt="Image" src="https://github.com/user-attachments/assets/c4f97c84-fdf3-4ebe-bb04-7e51bda2810c" />
----
+
 ---
 
 ### 💬 Müşteri Yorumları Yönetimi
@@ -264,11 +264,11 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/Testimonial/TestimonialList` — Önyüzde gösterilen müşteri yorumları listelenir. Müşteri adı, yorum metni ve görsel URL yönetilebilir.
 
 <img width="1534" height="659" alt="Image" src="https://github.com/user-attachments/assets/5386768a-4043-49f3-8b84-486edfdb7483" />
----
+
 <img width="1186" height="645" alt="Image" src="https://github.com/user-attachments/assets/3a52c1ef-4fa0-4582-ac16-37eaa71ae139" />
----
+
 <img width="1520" height="650" alt="Image" src="https://github.com/user-attachments/assets/dce96053-7ec3-44d5-9a4f-d249e43347db" />
----
+
 ---
 
 ### 🎬 Video Tanıtımları Yönetimi
@@ -276,9 +276,9 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/StoryVideo/StoryVideoList` — Önyüzde oynayan tanıtım videolarının URL ve açıklama bilgileri yönetilir.
 
 <img width="1390" height="370" alt="Image" src="https://github.com/user-attachments/assets/2787a1fe-fdd0-416d-9e9c-452449895262" />
----
+
 <img width="1506" height="747" alt="Image" src="https://github.com/user-attachments/assets/cbc80bc5-505e-4d29-9e7c-9201b62967f7" />
----
+
 ---
 
 ### ❓ S.S.S. Yönetimi
@@ -286,11 +286,11 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/SSS/SSSList` — Sık sorulan soruların soru ve cevap metinleri eklenir, güncellenir veya silinir.
 
 <img width="1511" height="721" alt="Image" src="https://github.com/user-attachments/assets/fb3d3a2e-285a-4e6a-a82b-92a1cf36dbad" />
----
+
 <img width="468" height="465" alt="Image" src="https://github.com/user-attachments/assets/85a6158b-aef2-45d8-965a-e15fb944e943" />
----
+
 <img width="1472" height="460" alt="Image" src="https://github.com/user-attachments/assets/196f586f-a8a0-4ba9-b667-b5d065f211da" />
----
+
 ---
 
 ### 📧 Bülten Aboneleri
@@ -298,11 +298,11 @@ Admin panelinin ana sayfası. MongoDB koleksiyonlarından anlık olarak çekilen
 `/Subscribe/SubscribeList` — Önyüzdeki abonelik formundan gelen e-posta adresleri listelenir. Aboneler yönetilebilir veya silinebilir.
 
 <img width="1490" height="846" alt="Image" src="https://github.com/user-attachments/assets/413b99a6-5629-4e1c-8e8a-e5e2cbc54f68" />
----
+
 <img width="735" height="322" alt="Image" src="https://github.com/user-attachments/assets/406ca04f-66f2-4743-b5b3-5b92fb61f5b2" />
----
+
 <img width="595" height="334" alt="Image" src="https://github.com/user-attachments/assets/96623af5-630d-4f07-b318-4e67d98e4165" />
----
+
 ---
 
 ## 🗄️ MongoDB Koleksiyonları
