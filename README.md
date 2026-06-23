@@ -82,7 +82,6 @@ Ziyaretçilere yönelik tek sayfalık bir yapıya sahip olan önyüz; Navbar, Fe
 
 Sayfanın ilk bölümü. MongoDB'deki `Features` koleksiyonundan dinamik olarak çekilen başlık, açıklama ve buton bilgileri hero alanında gösterilir. Ziyaretçiye restoranın sunduğu en önemli avantajlar vurgulanır.
 
-> 📸 *Ekran görüntüsü buraya eklenecek*
 <img width="1900" height="876" alt="Image" src="https://github.com/user-attachments/assets/a73c71a5-5926-43b3-bf8b-e070c57538a1" />
 
 ---
@@ -91,7 +90,7 @@ Sayfanın ilk bölümü. MongoDB'deki `Features` koleksiyonundan dinamik olarak 
 
 Restoranın sayısal verilerini (mutlu müşteri, sunulan ürün, yıl deneyimi vb.) gösteren statik sayaç alanıdır. Sayfayı kaydırınca animasyonlu biçimde sayıların arttığı görülür.
 
-> 📸 *Ekran görüntüsü buraya eklenecek*
+
 <img width="1898" height="423" alt="Image" src="https://github.com/user-attachments/assets/9c1eccda-9684-4401-a3b6-301650c92021" />
 
 ---
@@ -100,7 +99,6 @@ Restoranın sayısal verilerini (mutlu müşteri, sunulan ürün, yıl deneyimi 
 
 `AboutSection1` koleksiyonundan gelen verilerle restoranın hikayesi ve vizyonu anlatılır. Görsel + metin düzeniyle iki kolonlu bir yapı kullanılmıştır.
 
-> 📸 *Ekran görüntüsü buraya eklenecek*
 <img width="1570" height="796" alt="Image" src="https://github.com/user-attachments/assets/f1148c4d-90b0-4c5f-b143-f0947d672397" />
 
 ---
@@ -109,7 +107,6 @@ Restoranın sayısal verilerini (mutlu müşteri, sunulan ürün, yıl deneyimi 
 
 `AboutSection2` koleksiyonundan gelen verilerle restoranın misyonu ya da ek tanıtım içerikleri sunulur. Bölüm 1 ile birlikte `#about` anker linkiyle erişilebilir.
 
-> 📸 *Ekran görüntüsü buraya eklenecek*
 <img width="1601" height="876" alt="Image" src="https://github.com/user-attachments/assets/bb512275-ec88-40e7-9f82-548348440e02" />
 
 ---
@@ -118,7 +115,6 @@ Restoranın sayısal verilerini (mutlu müşteri, sunulan ürün, yıl deneyimi 
 
 `StoryVideos` koleksiyonundan gelen video URL'i embed edilerek restoranın mutfak arkası veya tanıtım videosu gösterilir. Ziyaretçilere görsel bir deneyim sunar.
 
-> 📸 *Ekran görüntüsü buraya eklenecek*
 <img width="1768" height="725" alt="Image" src="https://github.com/user-attachments/assets/7ad20a3b-b1fb-4d7f-967b-cad0cc3eb58a" />
 
 ---
@@ -127,16 +123,21 @@ Restoranın sayısal verilerini (mutlu müşteri, sunulan ürün, yıl deneyimi 
 
 `Products` koleksiyonundaki tüm ürünler kategorileriyle birlikte kart düzeninde listelenir. Her kartta ürün görseli, adı, hazırlanma süresi, güncel fiyatı ve varsa eski fiyatı yer alır.
 
-> 📸 *Ekran görüntüsü buraya eklenecek*
-<img width="1538" height="842" alt="Image" src="https://github.com/user-attachments/assets/a8dc2afd-8e5d-44e6-8437-db0dbbcb44dc" />
-<img width="1593" height="796" alt="Image" src="https://github.com/user-attachments/assets/3f9b1d01-8154-4da8-9400-157b866aaa64" />
-<img width="1554" height="827" alt="Image" src="https://github.com/user-attachments/assets/bd5ac96b-cfe7-432e-a5b0-3832916da537" />
-<img width="1523" height="822" alt="Image" src="https://github.com/user-attachments/assets/1aa8ca50-29a9-44ce-aec9-5e0414505e0a" />
-<img width="1568" height="845" alt="Image" src="https://github.com/user-attachments/assets/2c01e8b5-697a-4560-be6a-98cd487ee4e1" />
-<img width="1589" height="805" alt="Image" src="https://github.com/user-attachments/assets/3b746c83-5b44-48b6-ba2f-3ca6fddf9428" />
-<img width="1593" height="829" alt="Image" src="https://github.com/user-attachments/assets/2c482463-c9ce-4542-88b1-6cc289cbf193" />
-<img width="1534" height="817" alt="Image" src="https://github.com/user-attachments/assets/5eafc688-a89e-49d1-b196-b769735904e0" />
+<img width="1538" height="842" alt="Image" src="https://github.com/user-attachments/assets/fb1a6e8b-a2b2-4b76-9ce9-3464ae8fd7f9" />
 
+<img width="1593" height="623" alt="Image" src="https://github.com/user-attachments/assets/f09312b5-1fc7-4593-a7b3-1116f41386c3" />
+
+<img width="1554" height="624" alt="Image" src="https://github.com/user-attachments/assets/b34d4237-6000-4d98-bac1-1b041b7b08ce" />
+
+<img width="1523" height="628" alt="Image" src="https://github.com/user-attachments/assets/4760551a-db18-4fe2-a543-cd3f917c590c" />
+
+<img width="1568" height="628" alt="Image" src="https://github.com/user-attachments/assets/6ccf3424-9dd7-4d0a-b69f-35fef9d31aa4" />
+
+<img width="1589" height="649" alt="Image" src="https://github.com/user-attachments/assets/4e4688c2-cda9-472d-820c-d4de50ae8680" />
+
+<img width="1593" height="628" alt="Image" src="https://github.com/user-attachments/assets/a69f7556-162e-4319-b5bb-990e2aa2b62f" />
+
+<img width="1534" height="631" alt="Image" src="https://github.com/user-attachments/assets/4ae1bcf1-6119-430d-ad54-058de03a37ad" />
 ---
 
 ### 💬 Müşteri Yorumları (Testimonial)
