@@ -1,0 +1,43 @@
+﻿@model Mongo.Dtos.StoryVideoDto.CreateStoryVideoDto
+@{
+    ViewData["Title"] = "Yeni Hikaye Videosu";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Hikaye Videosu Ekle</h4>
+                <p class="card-description">Tanıtım videosu alanını doldurmak için aşağıdaki alanları kullanın.</p>
+                
+                <form class="forms-sample" method="post" action="/StoryVideo/CreateStoryVideo">
+                    
+                    <div class="form-group">
+                        <label for="Title">Başlık</label>
+                        <input type="text" class="form-control" id="Title" name="Title" placeholder="Örn: Lezzetin Kamera Arkası" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ImageUrl">Kapak Görseli URL</label>
+                        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" placeholder="Örn: /foodera/images/video-cover.jpg" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="VideoUrl">Video Linki (YouTube / Vimeo / Mp4)</label>
+                        <input type="text" class="form-control" id="VideoUrl" name="VideoUrl" placeholder="Örn: https://www.youtube.com/watch?v=..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Kısa Açıklama</label>
+                        <textarea class="form-control" id="Description" name="Description" rows="4" placeholder="Videonun yanında veya altında duracak kısa tanıtım yazısı..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/StoryVideo/StoryVideoList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

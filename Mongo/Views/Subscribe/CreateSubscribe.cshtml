@@ -1,0 +1,28 @@
+﻿@model Mongo.Dtos.SubscribeDto.CreateSubscribeDto
+@{
+    ViewData["Title"] = "Manuel Abone Ekle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Abone Ekle (Manuel)</h4>
+                <p class="card-description">Sisteme el ile yeni bir e-posta abonesi kaydetmek için aşağıdaki alanı kullanın.</p>
+                
+                <form class="forms-sample" method="post" action="/Subscribe/CreateSubscribe">
+                    
+                    <div class="form-group">
+                        <label for="Email">E-posta Adresi</label>
+                        <input type="email" class="form-control" id="Email" name="Email" placeholder="Örn: ornek@eposta.com" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/Subscribe/SubscribeList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

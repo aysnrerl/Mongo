@@ -1,0 +1,38 @@
+﻿@model Mongo.Dtos.AboutSection2Dto.CreateAboutSection2Dto
+@{
+    ViewData["Title"] = "Yeni Bölüm 2 İçeriği";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Hakkımızda Bölüm 2 - Yeni İçerik Ekle</h4>
+                <p class="card-description">Ana sayfadaki ikinci hakkımızda alanı için yeni başlık, açıklama ve görsel ekleyin.</p>
+                
+                <form class="forms-sample" method="post" action="/AboutSection2/CreateAboutSection2">
+                    
+                    <div class="form-group">
+                        <label for="Title">Başlık</label>
+                        <input type="text" class="form-control" id="Title" name="Title" placeholder="Örn: Vizyonumuz ve Değerlerimiz" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ImageUrl">Görsel URL</label>
+                        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" placeholder="Örn: /foodera/images/vision.jpg" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Açıklama / Detay Yazısı</label>
+                        <textarea class="form-control" id="Description" name="Description" rows="6" placeholder="Bu alanla ilgili detaylı açıklamayı buraya yazın..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/AboutSection2/AboutSection2List" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

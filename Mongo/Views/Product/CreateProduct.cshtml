@@ -1,0 +1,57 @@
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+    var categories = ViewBag.Categories as List<Mongo.Dtos.CategoryDto.ResultCategoryDto>;
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Yeni Ürün Ekleme Sayfası</h4>
+            <form method="post" action="/Product/CreateProduct" class="forms-sample">
+
+                <div class="form-group">
+                    <label>Kategori</label>
+                    <select class="form-control" name="CategoryName" required>
+                        <option value="">-- Kategori Seçiniz --</option>
+                        @if (categories != null)
+                        {
+                            foreach (var cat in categories)
+                            {
+                                <option value="@cat.CategoryName">@cat.CategoryName</option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Ürün Adı</label>
+                    <input type="text" class="form-control" name="ProductName" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Ürün Yapım Zamanı (Dakika)</label>
+                    <input type="number" class="form-control" name="TotalTime" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Ürün Güncel Fiyatı (₺)</label>
+                    <input type="number" step="0.01" class="form-control" name="Price" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Ürün Eski Fiyatı (₺)</label>
+                    <input type="number" step="0.01" class="form-control" name="OldPrice" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Ürün Görsel URL</label>
+                    <input type="text" class="form-control" name="ImageUrl" required />
+                </div>
+
+                <button type="submit" class="btn btn-primary mr-2">Ürünü Kaydet</button>
+                <a href="/Product/ProductList" class="btn btn-light">İptal</a>
+            </form>
+        </div>
+    </div>
+</div>

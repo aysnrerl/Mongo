@@ -1,0 +1,23 @@
+﻿@model Mongo.Dtos.SSSDto.UpdateSSSDto
+@{
+    ViewData["Title"] = "Soruyu Güncelle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Soruyu Düzenle</h4>
+        <form class="forms-sample" method="post">
+            <input type="hidden" asp-for="SSSId" />
+            <div class="form-group">
+                <label>Soru</label>
+                <input type="text" asp-for="Question" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>Cevap</label>
+                <textarea asp-for="Answer" class="form-control" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn btn-warning mr-2">Güncelle</button>
+            <a href="/SSS/SSSList" class="btn btn-light">İptal</a>
+        </form>
+    </div>
+</div>

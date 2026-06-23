@@ -1,0 +1,31 @@
+﻿@model Mongo.Dtos.SubscribeDto.GetSubscribeByIdDto
+@{
+    ViewData["Title"] = "Abone Güncelle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Abone Bilgilerini Düzenle</h4>
+                <p class="card-description">Mevcut abonenin e-posta bilgisini buradan güncelleyebilirsiniz.</p>
+                
+                <form class="forms-sample" method="post" action="/Subscribe/UpdateSubscribe">
+                    
+                    <input type="hidden" name="SubscribeId" value="@Model.SubscribeId" />
+                    <input type="hidden" name="CreatedDate" value="@Model.CreatedDate.ToString("yyyy-MM-ddTHH:mm:ss")" />
+
+                    <div class="form-group">
+                        <label for="Email">E-posta Adresi</label>
+                        <input type="email" class="form-control" id="Email" name="Email" value="@Model.Email" required>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Değişiklikleri Kaydet</button>
+                    <a href="/Subscribe/SubscribeList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

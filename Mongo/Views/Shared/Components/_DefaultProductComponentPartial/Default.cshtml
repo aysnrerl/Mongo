@@ -1,0 +1,104 @@
+@model List<Mongo.Dtos.ProductDto.ResultProductDto>
+
+<div id="explore" class="elements-content">
+    <div class="container">
+        <div class="about-inline text-center">
+            <h3>Menümüzü Keşfedin</h3>
+            <p>
+                Usta şeflerimizin elinden çıkan, her sabah taze taze hazırlanan en popüler imza lezzetlerimizi inceleyin ve anında sipariş verin.
+            </p>
+        </div>
+
+        @if (Model != null && Model.Any())
+        {
+            var grouped = Model
+                .Where(x => !string.IsNullOrEmpty(x.CategoryName) && x.CategoryName != "Diğer")
+                .GroupBy(x => x.CategoryName)
+                .ToList();
+
+            foreach (var category in grouped)
+            {
+                <div style="margin-bottom: 60px;">
+                    <!-- Kategori Başlığı -->
+                    <div style="text-align: center; margin-bottom: 35px; position: relative;">
+                        <div style="display: inline-block; position: relative;">
+                            <h3 style="font-weight: 800; color: #2c2c2c; text-transform: uppercase; letter-spacing: 3px; font-size: 26px; margin: 0; padding: 0 30px;">
+                                @category.Key
+                            </h3>
+                            <div style="width: 60px; height: 3px; background: #a82d49; margin: 10px auto 0; border-radius: 2px;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Bu Kategorideki Ürünler -->
+                    <div class="row">
+                        @foreach (var item in category)
+                        {
+                            <div class="col-md-4" style="margin-bottom: 30px;">
+                                <div class="card card-product" style="border-radius: 12px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: transform 0.3s ease, box-shadow 0.3s ease; border: none;">
+                                    <div style="position: relative; overflow: hidden;">
+                                        <img src="@item.ImageUrl" alt="@item.ProductName" style="width: 100% !important; height: 250px !important; object-fit: cover !important; display: block !important; transition: transform 0.4s ease;">
+                                    </div>
+                                    <div style="padding: 20px;">
+                                        <h4 style="font-weight: 700; margin-bottom: 6px; font-size: 18px; color: #2c2c2c;">@item.ProductName</h4>
+                                        <p style="color: #999; font-size: 13px; margin-bottom: 14px;">
+                                            <i class="fa fa-clock-o"></i> @item.TotalTime dk &nbsp;|&nbsp; 1 Porsiyon
+                                        </p>
+                                        <div style="display: flex; align-items: center; justify-content: space-between;">
+                                            <div>
+                                                <span style="font-size: 22px; font-weight: 800; color: #a82d49;">@item.Price.ToString("C2")</span>
+                                                @if (item.OldPrice > 0)
+                                                {
+                                                    <del style="font-size: 14px; color: #bbb; margin-left: 8px;">@item.OldPrice.ToString("C2")</del>
+                                                }
+                                            </div>
+                                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalContactForm" data-product="@item.ProductName|@item.Price" style="border-radius: 8px; font-weight: 600; padding: 8px 18px; font-size: 13px;">
+                                                <i class="fa fa-shopping-basket"></i> Sipariş Ver
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <div class="col-md-12 text-center text-muted">
+                <p>Henüz menüye ürün eklenmedi.</p>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    .card-product:hover {
+        transform: translateY(-8px) !important;
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15) !important;
+    }
+    .card-product:hover img {
+        transform: scale(1.05);
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Ürün kartından tıklanınca modal'daki dropdown'ı otomatik seç
+        var orderBtns = document.querySelectorAll('[data-product]');
+        orderBtns.forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var productInfo = btn.getAttribute('data-product');
+                var selectEl = document.getElementById('productSelect');
+                if (selectEl && productInfo) {
+                    for (var i = 0; i < selectEl.options.length; i++) {
+                        if (selectEl.options[i].value === productInfo) {
+                            selectEl.selectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+            });
+        });
+    });
+</script>

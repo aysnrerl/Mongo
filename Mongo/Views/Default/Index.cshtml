@@ -1,0 +1,99 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_DefaultHeadComponentPartial")
+
+<body id="home">
+    <div class="body">
+        <!-- HEADER -->
+        @await Component.InvokeAsync("_DefaultNavbarComponentPartial")
+
+
+        <!-- Home -->
+        
+            @await Component.InvokeAsync("_DefaultFeatureComponentPartial")
+        
+
+        <!-- Stats -->
+        @await Component.InvokeAsync("_DefaultStatisticComponentPartial")
+
+
+        <!-- About Us -->
+        <div id="about" class="container">
+            <!-- About Section 1 -->
+            @await Component.InvokeAsync("_DefaultAboutSection1ComponentPartial")
+
+            <!-- About Section 2 -->
+            @await Component.InvokeAsync("_DefaultAboutSection2ComponentPartial")
+        </div>
+        <div class="space80"></div>
+
+
+        @await Component.InvokeAsync("_DefaultStoryVideoComponentPartial")
+
+
+
+        @await Component.InvokeAsync("_DefaultProductComponentPartial")
+        <div class="space100"></div>
+
+        <!-- Testimonials -->
+        @await Component.InvokeAsync("_DefaultTestimonialComponentPartial")
+
+        <!-- Faq -->
+        @await Component.InvokeAsync("_DefaultSSSComponentPartial")
+
+        <!-- PARALLAX -->
+        <section class="parallax-content2 parallax2 text-center" data-stellar-background-ratio="0.4">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h4>Her gün tutkuyla, fırından taptaze ve sıcacık ürünler çıkarıyoruz.</h4>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#about" class="btn btn-lg btn-primary pull-left">Daha Fazla Bilgi <i class="icon-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center">
+            <div class="cta-wrap subscribe-elt2">
+                <div class="container">
+                    <div class="col-md-12">
+                        <h1>Acele Edin! E-bültenimize abone olun <br> ve sonraki siparişinizde <span>%25 İndirim</span> kazanın!</h1>
+                        <p>Bu ay için geçerli sınırlı süreli teklif. Kredi kartı gerekmez.</p>
+
+                        <form class="intro-newsletter" action="/Subscribe/CreateSubscribe" method="POST">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <input class="e-mail" placeholder="E-posta adresinizi buraya yazın..." name="Email" id="eaddress" required type="email">
+                                </div>
+                                <div class="col-md-4">
+                                    <button class="btn btn-primary btn-block" type="submit">Abone Ol</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="space80"></div>
+
+        <!-- FOOTER -->
+        @await Component.InvokeAsync("_DefaultFooterComponentPartial")
+        <!-- Copyright -->
+        
+
+
+
+    <!-- JAVASCRIPT =============================-->
+    @await Component.InvokeAsync("_DefaultScriptComponentPartial")
+</body>
+
+</html>

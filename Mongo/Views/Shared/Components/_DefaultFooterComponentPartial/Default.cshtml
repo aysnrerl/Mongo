@@ -1,0 +1,126 @@
+@model List<Mongo.Dtos.ProductDto.ResultProductDto>
+
+<footer class="footer2" id="footer2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 footerP text-center">
+                <a href="#home">Ana Sayfa</a>
+                <a href="#about">Hakkımızda</a>
+                <a href="#explore">Menü</a>
+                <a href="#reviews">Yorumlar</a>
+            </div>
+            <div class="footer-social space30 text-center">
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-twitter"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="footer-copy">
+    <div class="container">
+        &copy; 2025. Foodera. Tüm hakları saklıdır.
+    </div>
+</div>
+
+
+<!-- SİPARİŞ MODAL -->
+<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 520px;">
+        <div class="modal-content" style="border: none; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+
+            <!-- Modal Üst Başlık -->
+            <div style="background: linear-gradient(135deg, #a82d49 0%, #832036 100%); padding: 28px 30px; text-align: center; position: relative;">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="position: absolute; top: 12px; right: 16px; color: #fff; opacity: 0.8; font-size: 24px; text-shadow: none;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <div style="background: rgba(255,255,255,0.15); width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <i class="fa fa-shopping-basket" style="font-size: 26px; color: #fff;"></i>
+                </div>
+                <h3 style="color: #fff; font-weight: 700; margin: 0 0 4px 0; font-size: 22px;">Siparişinizi Verin</h3>
+                <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 14px;">Lezzetlerimiz kapınıza gelsin!</p>
+            </div>
+
+            <!-- Modal Form -->
+            <div style="padding: 28px 30px;">
+                <form name="orderForm" id="orderForm" action="/Order/CreateFrontOrder" method="post">
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-weight: 600; color: #333; font-size: 13px; margin-bottom: 6px; display: block;">
+                            <i class="fa fa-user" style="color: #a82d49; margin-right: 6px;"></i>Ad Soyad
+                        </label>
+                        <input name="CustomerName" placeholder="Adınız Soyadınız" required type="text"
+                               style="width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 10px; font-size: 14px; transition: border-color 0.3s; outline: none;"
+                               onfocus="this.style.borderColor='#a82d49'" onblur="this.style.borderColor='#eee'">
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-weight: 600; color: #333; font-size: 13px; margin-bottom: 6px; display: block;">
+                            <i class="fa fa-envelope" style="color: #a82d49; margin-right: 6px;"></i>E-posta
+                        </label>
+                        <input name="CustomerEmail" placeholder="E-posta adresiniz" required type="email"
+                               style="width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 10px; font-size: 14px; transition: border-color 0.3s; outline: none;"
+                               onfocus="this.style.borderColor='#a82d49'" onblur="this.style.borderColor='#eee'">
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-weight: 600; color: #333; font-size: 13px; margin-bottom: 6px; display: block;">
+                            <i class="fa fa-map-marker" style="color: #a82d49; margin-right: 6px;"></i>Teslimat Adresi
+                        </label>
+                        <input name="Address" placeholder="Açık adresiniz" required type="text"
+                               style="width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 10px; font-size: 14px; transition: border-color 0.3s; outline: none;"
+                               onfocus="this.style.borderColor='#a82d49'" onblur="this.style.borderColor='#eee'">
+                    </div>
+
+                    <div style="margin-bottom: 16px;">
+                        <label style="font-weight: 600; color: #333; font-size: 13px; margin-bottom: 6px; display: block;">
+                            <i class="fa fa-phone" style="color: #a82d49; margin-right: 6px;"></i>Telefon
+                        </label>
+                        <input name="Phone" placeholder="05XX XXX XX XX" required type="text"
+                               style="width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 10px; font-size: 14px; transition: border-color 0.3s; outline: none;"
+                               onfocus="this.style.borderColor='#a82d49'" onblur="this.style.borderColor='#eee'">
+                    </div>
+
+                    <div style="margin-bottom: 24px;">
+                        <label style="font-weight: 600; color: #333; font-size: 13px; margin-bottom: 6px; display: block;">
+                            <i class="fa fa-cutlery" style="color: #a82d49; margin-right: 6px;"></i>Ürün Seçimi
+                        </label>
+                        <select name="ProductInfo" id="productSelect" required
+                                style="width: 100%; padding: 12px 16px; border: 2px solid #eee; border-radius: 10px; font-size: 14px; transition: border-color 0.3s; outline: none; background: #fff; cursor: pointer;"
+                                onfocus="this.style.borderColor='#a82d49'" onblur="this.style.borderColor='#eee'">
+                            <option value="">-- Ürün Seçiniz --</option>
+                            @if (Model != null && Model.Any())
+                            {
+                                var grouped = Model
+                                    .Where(x => !string.IsNullOrEmpty(x.CategoryName) && x.CategoryName != "Diğer")
+                                    .GroupBy(x => x.CategoryName);
+                                foreach (var category in grouped)
+                                {
+                                    <optgroup label="🍽️ @category.Key">
+                                        @foreach (var item in category)
+                                        {
+                                            <option value="@item.ProductName|@item.Price">@item.ProductName — @item.Price.ToString("C2")</option>
+                                        }
+                                    </optgroup>
+                                }
+                            }
+                        </select>
+                    </div>
+
+                    <button type="submit" style="width: 100%; padding: 14px; background: linear-gradient(135deg, #a82d49 0%, #832036 100%); color: #fff; border: none; border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 15px rgba(168, 45, 73, 0.4);"
+                            onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(168, 45, 73, 0.5)'"
+                            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(168, 45, 73, 0.4)'">
+                        <i class="fa fa-paper-plane"></i> &nbsp; Siparişi Gönder
+                    </button>
+                </form>
+
+                <p style="text-align: center; margin-top: 16px; color: #999; font-size: 12px;">
+                    <i class="fa fa-lock"></i> Bilgileriniz güvenle saklanır.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</div>

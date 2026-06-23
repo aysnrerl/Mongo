@@ -1,0 +1,48 @@
+﻿@model Mongo.Dtos.TestimonialDto.CreateTestimonialDto
+@{
+    ViewData["Title"] = "Yeni Yorum Ekle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Müşteri Yorumu Ekle</h4>
+                <p class="card-description">Ana sayfada görünecek yeni bir müşteri değerlendirmesi girin.</p>
+                
+                <form class="forms-sample" method="post" action="/Testimonial/CreateTestimonial">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="NameSurname">Müşteri Adı Soyadı</label>
+                                <input type="text" class="form-control" id="NameSurname" name="NameSurname" placeholder="Örn: Burak Aydın" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Pozition">Unvan / Pozisyon</label>
+                                <input type="text" class="form-control" id="Pozition" name="Pozition" placeholder="Örn: Gurme veya Düzenli Müşteri" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ImageUrl">Profil Fotoğrafı URL</label>
+                        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" placeholder="Örn: /template/images/faces/face1.jpg" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Müşterinin Yorumu</label>
+                        <textarea class="form-control" id="Description" name="Description" rows="5" placeholder="Yemekler hakkındaki yorumu buraya yazın..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/Testimonial/TestimonialList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

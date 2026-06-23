@@ -1,0 +1,22 @@
+﻿@model Mongo.Dtos.SSSDto.CreateSSSDto
+@{
+    ViewData["Title"] = "Yeni Soru Ekle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Yeni Sıkça Sorulan Soru Ekle</h4>
+        <form class="forms-sample" method="post">
+            <div class="form-group">
+                <label>Soru</label>
+                <input type="text" asp-for="Question" class="form-control" placeholder="Soruyu yazınız...">
+            </div>
+            <div class="form-group">
+                <label>Cevap</label>
+                <textarea asp-for="Answer" class="form-control" rows="4" placeholder="Cevabı yazınız..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+            <a href="/SSS/SSSList" class="btn btn-light">İptal</a>
+        </form>
+    </div>
+</div>

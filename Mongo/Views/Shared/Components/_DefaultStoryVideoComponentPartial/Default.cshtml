@@ -1,0 +1,21 @@
+@model List<Mongo.Dtos.StoryVideoDto.ResultStoryVideoDto>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var item in Model)
+    {
+        <div class="video-action" style="background: url('@item.ImageUrl') no-repeat center center; background-size: cover; position: relative;">
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.55); z-index: 1;"></div>
+            <div class="row text-center" style="position: relative; z-index: 2;">
+                <h1 style="color: #ffffff !important; text-shadow: 2px 2px 4px rgba(0,0,0,0.8);">@item.Title</h1>
+                <p style="color: #f1f1f1 !important;">@item.Description</p>
+                <br><br>
+                <a href="@item.VideoUrl" class="swipebox-video">
+                    <div class="intro-video-pop">
+                        <i class="fa fa-play"></i> Hikayemizi İzleyin
+                    </div>
+                </a>
+            </div>
+        </div>
+    }
+}

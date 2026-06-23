@@ -1,0 +1,50 @@
+@model List<Mongo.Dtos.ProductDto.ResultProductDto>
+@{
+    ViewData["Title"] = "ProductList";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+    int i = 0;
+}
+<div class="col-lg-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Ürün Yönetimi</h4>
+            <div class="table-responsive pt-3">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Kategori</th>
+                            <th>Ürün Adı</th>
+                            <th>Ürün Yapım Zamanı</th>
+                            <th>Ürün Güncel Fiyatı</th>
+                            <th>Ürün Eski Fiyatı</th>
+                            <th>Ürün Görseli</th>
+                            <th>Sil</th>
+                            <th>Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            i++;
+                            <tr>
+                                <td>@i</td>
+                                <td><span class="badge badge-info">@item.CategoryName</span></td>
+                                <td>@item.ProductName</td>
+                                <td>@item.TotalTime dk</td>
+                                <td>@item.Price.ToString("C2")</td>
+                                <td>@item.OldPrice.ToString("C2")</td>
+                                <td><img src="@item.ImageUrl" alt="Ürün Görseli" class="img-fluid" style="width: 80px; height:60px; object-fit:cover; border-radius:5px;" /></td>
+                                <td><a href="/Product/DeleteProduct/@item.ProductId" class="btn btn-inverse-danger btn-fw">Sil</a></td>
+                                <td><a href="/Product/UpdateProduct/@item.ProductId" class="btn btn-inverse-warning btn-fw">Güncelle</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                <br />
+                <a href="/Product/CreateProduct" class="btn btn-inverse-info btn-fw">Yeni Ürün Ekle</a>
+            </div>
+        </div>
+    </div>
+</div>

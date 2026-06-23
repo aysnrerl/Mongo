@@ -1,0 +1,38 @@
+﻿@model Mongo.Dtos.FeatureDto.CreateFeatureDto
+@{
+    ViewData["Title"] = "Yeni Öne Çıkan İçerik";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Öne Çıkan İçerik Ekle</h4>
+                <p class="card-description">Giriş ekranı (Hero Section) için çarpıcı bir başlık ve arka plan görseli girin.</p>
+                
+                <form class="forms-sample" method="post" action="/Feature/CreateFeature">
+                    
+                    <div class="form-group">
+                        <label for="Title">Ana Başlık</label>
+                        <input type="text" class="form-control" id="Title" name="Title" placeholder="Örn: %100 Organik El Yapımı Lezzetler" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ImageUrl">Arka Plan Görsel URL</label>
+                        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" placeholder="Örn: /foodera/images/hero-bg.jpg" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Kısa Açıklama / Alt Başlık</label>
+                        <textarea class="form-control" id="Description" name="Description" rows="4" placeholder="Başlığın hemen altında görünecek çekici bir cümle yazın..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Kaydet</button>
+                    <a href="/Feature/FeatureList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

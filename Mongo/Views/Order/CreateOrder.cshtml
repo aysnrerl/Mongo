@@ -1,0 +1,79 @@
+﻿@model Mongo.Dtos.OrderDto.CreateOrderDto
+@{
+    ViewData["Title"] = "Manuel Sipariş Ekle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Yeni Sipariş Oluştur (Manuel)</h4>
+                <p class="card-description">Müşteriden gelen çağrı veya talebe göre el ile sipariş işlemek için aşağıdaki alanları doldurun.</p>
+                
+                <form class="forms-sample" method="post" action="/Order/CreateOrder">
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="CustomerName">Müşteri Adı Soyadı</label>
+                                <input type="text" class="form-control" id="CustomerName" name="CustomerName" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="CustomerEmail">Müşteri E-posta</label>
+                                <input type="email" class="form-control" id="CustomerEmail" name="CustomerEmail" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Phone">Telefon Numarası</label>
+                                <input type="text" class="form-control" id="Phone" name="Phone" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="ProductName">Satılan Ürün Adı</label>
+                                <input type="text" class="form-control" id="ProductName" name="ProductName" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="ProductId">Ürün ID (MongoDB Ürün Kodu)</label>
+                                <input type="text" class="form-control" id="ProductId" name="ProductId">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="Quantity">Adet</label>
+                                <input type="number" class="form-control" id="Quantity" name="Quantity" min="1" value="1" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="UnitPrice">Birim Fiyat (₺)</label>
+                                <input type="text" class="form-control" id="UnitPrice" name="UnitPrice" placeholder="0.00" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Address">Teslimat Adresi</label>
+                        <textarea class="form-control" id="Address" name="Address" rows="4" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Siparişi Tamamla</button>
+                    <a href="/Order/OrderList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

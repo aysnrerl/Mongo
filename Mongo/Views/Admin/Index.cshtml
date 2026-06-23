@@ -1,0 +1,144 @@
+﻿@model List<Mongo.Dtos.OrderDto.ResultOrderDto>
+@{
+    ViewData["Title"] = "Gelişmiş Dashboard";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="content-wrapper">
+    
+    <div class="row">
+        
+        <div class="col-lg-3 col-md-6 stretch-card grid-margin">
+            <div class="card bg-primary text-white" style="border-radius: 10px;">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="text-white-50 small mb-1">Yemek Çeşitleri</p>
+                        <h2 class="font-weight-bold mb-0">@ViewBag.TotalProductCount</h2>
+                    </div>
+                    <i class="typcn typcn-document-text text-white-50" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 stretch-card grid-margin">
+            <div class="card bg-success text-white" style="border-radius: 10px;">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="text-white-50 small mb-1">Toplam Sipariş</p>
+                        <h2 class="font-weight-bold mb-0">@ViewBag.TotalOrderCount</h2>
+                    </div>
+                    <i class="typcn typcn-shopping-bag text-white-50" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 stretch-card grid-margin">
+            <div class="card bg-info text-white" style="border-radius: 10px;">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="text-white-50 small mb-1">Toplam Ciro</p>
+                        <h2 class="font-weight-bold mb-0" style="font-size: 1.5rem;">@ViewBag.TotalRevenue</h2>
+                    </div>
+                    <i class="typcn typcn-chart-line text-white-50" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 stretch-card grid-margin">
+            <div class="card bg-warning text-white" style="border-radius: 10px;">
+                <div class="card-body d-flex align-items-center justify-content-between">
+                    <div>
+                        <p class="text-white-50 small mb-1">Bülten Aboneleri</p>
+                        <h2 class="font-weight-bold mb-0">@ViewBag.TotalSubscribeCount</h2>
+                    </div>
+                    <i class="typcn typcn-mail text-white-50" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-2">
+        
+        <div class="col-md-7 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Son Sipariş Hareketleri</h4>
+                    <p class="card-description text-muted">Sistemden anlık olarak geçen son 5 sipariş.</p>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Müşteri</th>
+                                    <th>Ürün</th>
+                                    <th>Tutar</th>
+                                    <th>Durum</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @if (Model != null && Model.Any())
+                                {
+                                    foreach (var item in Model.AsEnumerable().Reverse().Take(5))
+                                    {
+                                        <tr>
+                                            <td class="font-weight-bold">@item.CustomerName</td>
+                                            <td>@item.ProductName</td>
+                                            <td class="text-success font-weight-bold">@item.TotalPrice.ToString("C2")</td>
+                                            <td>
+                                                <span class="badge @(item.Status == "Beklemede" ? "badge-warning" : "badge-success") text-white small">@item.Status</span>
+                                            </td>
+                                        </tr>
+                                    }
+                                }
+                                else
+                                {
+                                    <tr>
+                                        <td colspan="4" class="text-center text-muted">Sipariş bulunmuyor.</td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-5 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Son Müşteri Geri Bildirimleri</h4>
+                    <p class="card-description text-muted">Sitenize eklenen son aktif referans yorumları (Toplam: @ViewBag.TotalTestimonialCount)</p>
+                    
+                    <div class="mt-3">
+                        @if (ViewBag.LatestTestimonials != null)
+                        {
+                            var testList = (List<Mongo.Dtos.TestimonialDto.ResultTestimonialDto>)ViewBag.LatestTestimonials;
+                            if (testList.Any())
+                            {
+                                foreach (var comment in testList.AsEnumerable().Reverse().Take(3))
+                                {
+                                    <div class="d-flex align-items-center mb-3 pb-2 border-bottom">
+                                        <img src="@comment.ImageUrl" alt="Profil" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" class="mr-3" />
+                                        <div style="flex: 1;">
+                                            <h6 class="mb-0 font-weight-bold">@comment.NameSurname</h6>
+                                            <small class="text-info">@comment.Pozition</small>
+                                            <p class="text-muted small mb-0 mt-1" style="line-height: 1.2;">
+                                                @(comment.Description.Length > 65 ? comment.Description.Substring(0, 65) + "..." : comment.Description)
+                                            </p>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                            else
+                            {
+                                <p class="text-center text-muted small mt-4">Henüz müşteri yorumu girilmemiş.</p>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

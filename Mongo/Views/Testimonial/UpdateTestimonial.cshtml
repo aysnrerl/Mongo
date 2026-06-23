@@ -1,0 +1,50 @@
+﻿@model Mongo.Dtos.TestimonialDto.GetTestimonialByIdDto
+@{
+    ViewData["Title"] = "Yorumu Güncelle";
+    Layout = "~/Views/Admin/AdminLaoyut.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12 grid-margin stretch-card">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Müşteri Yorumunu Güncelle</h4>
+                <p class="card-description">Müşteri yorumuna ait bilgileri buradan güncelleyebilirsiniz.</p>
+                
+                <form class="forms-sample" method="post" action="/Testimonial/UpdateTestimonial">
+                    
+                    <input type="hidden" name="TestimonialId" value="@Model.TestimonialId" />
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="NameSurname">Müşteri Adı Soyadı</label>
+                                <input type="text" class="form-control" id="NameSurname" name="NameSurname" value="@Model.NameSurname" required>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="Pozition">Unvan / Pozisyon</label>
+                                <input type="text" class="form-control" id="Pozition" name="Pozition" value="@Model.Pozition" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="ImageUrl">Profil Fotoğrafı URL</label>
+                        <input type="text" class="form-control" id="ImageUrl" name="ImageUrl" value="@Model.ImageUrl" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="Description">Müşterinin Yorumu</label>
+                        <textarea class="form-control" id="Description" name="Description" rows="5" required>@Model.Description</textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary mr-2">Değişiklikleri Kaydet</button>
+                    <a href="/Testimonial/TestimonialList" class="btn btn-light">İptal Et</a>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
